@@ -1,0 +1,121 @@
+// O objetivo do programa é realizar operações matemáticas, simulando uma calculadora
+// Todos os métodos usados para os cálculos foram "puxados" da classe Calculadora
+// Programa principal
+
+class Main {
+
+   field Calculadora calc;
+
+   function void main() {
+      var int n1, n2, operacao;
+      var Calculadora calc;
+
+      // Neste bloco, o usuário escolhe qual operação fazer:
+      do Output.printString("Bem-vindo(a) a Calculadora!");
+      do Output.println();
+      do Output.printString("Qual operacao voce deseja realizar?");
+      do Output.println();
+      do Output.println();
+      do Output.printString("Digite 1 para SOMA");
+      do Output.println();
+      do Output.printString("Digite 2 para SUBTRACAO");
+      do Output.println();
+      do Output.printString("Digite 3 para MULTIPLICACAO");
+      do Output.println();
+      do Output.printString("Digite 4 para DIVISAO");
+      do Output.println();
+      do Output.printString("Digite 5 para RAIZ QUADRADA");
+      do Output.println();
+      do Output.printString("Digite 6 para PORCENTAGEM");
+      do Output.println();
+
+      let operacao = Keyboard.readInt(": ");
+
+      // Dependendo da operação escolhida, uma estrutura de decisão é executada, chamando um método da classe Calculadora
+      if (operacao = 1) {
+         let n1 = Keyboard.readInt("Digite o primeiro elemento da soma: ");
+         let n2 = Keyboard.readInt("Digite o segundo elemento da soma: ");
+
+         let calc = Calculadora.new(n1, n2);
+
+         //Apenas concatenação:
+         do Output.printInt(n1);
+         do Output.printString(" + ");
+         do Output.printInt(n2);
+         do Output.printString(" =");
+         do Output.println();
+         do Output.printInt(calc.soma(n1, n2));
+
+      } else{
+         if (operacao = 2) {
+            let n1 = Keyboard.readInt("Digite o primeiro elemento da subtracao: ");
+            let n2 = Keyboard.readInt("Digite o segundo elemento da subtracao: ");
+            
+            let calc = Calculadora.new(n1, n2);
+   
+            do Output.printInt(n1);
+            do Output.printString(" - ");
+            do Output.printInt(n2);
+            do Output.printString(" =");
+            do Output.println();
+            do Output.printInt(calc.subtracao(n1, n2));
+
+         } else{
+            if (operacao = 3) {
+               let n1 = Keyboard.readInt("Digite o primeiro elemento da multiplicacao: ");
+               let n2 = Keyboard.readInt("Digite o segundo elemento da multiplicacao: ");
+               
+               let calc = Calculadora.new(n1, n2);
+      
+               do Output.printInt(n1);
+               do Output.printString(" x ");
+               do Output.printInt(n2);
+               do Output.printString(" =");
+               do Output.println();
+               do Output.printInt(calc.multiplicacao(n1, n2));
+
+            } else{
+               if (operacao = 4) {
+                  let n1 = Keyboard.readInt("Digite o primeiro elemento da divisao: ");
+                  let n2 = Keyboard.readInt("Digite o segundo elemento da divisao: ");
+                  
+                  let calc = Calculadora.new(n1, n2);
+         
+                  do Output.printInt(n1);
+                  do Output.printString(" / ");
+                  do Output.printInt(n2);
+                  do Output.printString(" =");
+                  do Output.println();
+                  do Output.printInt(calc.divisao(n1, n2));
+
+               } else{
+                  if (operacao = 5) {
+                     let n1 = Keyboard.readInt("Digite um numero: ");
+
+                     let calc = Calculadora.new(n1, n2);
+
+                     do Output.printString("Raiz quadrada de ");
+                     do Output.printInt(n1);
+                     do Output.printString(" = ");
+                     do Output.printInt(calc.rad(n1));
+                     
+                  } else{
+                     if (operacao = 6) {
+                        let n1 = Keyboard.readInt("Digite um numero: ");
+   
+                        let calc = Calculadora.new(n1, n2);
+   
+                        do Output.printInt(n1);
+                        do Output.printString(" equivale a ");
+                        do Output.printInt(calc.porcentagem(n1));
+                        do Output.printString("%");
+                     }
+                  }
+               }
+            }
+         }
+      }
+      
+      return;
+   }
+}

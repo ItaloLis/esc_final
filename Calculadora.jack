@@ -1,0 +1,45 @@
+// Contém todas os métodos usados no main
+// Cálculos
+
+class Calculadora{
+    field int x;
+    field int y;
+    field int result;
+
+    constructor Calculadora new(int x, int y) {
+        let x = x;
+        let y = y;
+        let result = result;
+        return this;
+    }
+
+    method int soma(int x, int y) {
+        let result = x + y;
+        return result;
+    }
+
+    method int subtracao(int x, int y) {
+        let result = x - y;
+        return result;
+    }
+
+    method int multiplicacao(int x, int y) {
+        let result = x * y;
+        return result;
+    }
+
+    method int divisao(int x, int y) {
+        let result = x / y;
+        return result;
+    }
+
+    method int rad(int x) {
+        let result = Math.sqrt(x);
+        return result;
+    }
+
+    method int porcentagem(int x) {
+        let result = x * 100;
+        return result;
+    }
+}
